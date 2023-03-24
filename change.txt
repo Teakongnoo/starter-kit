@@ -1,0 +1,33 @@
+// Package.Json
+"scripts": {
+    "dev": "next dev -p 3002",  // Add Port
+    "build": "next build",
+    "start": "next start",
+    "export": "next export",
+    "lint": "eslint --fix \"src/**/*.{js,jsx}\"",
+    "format": "prettier --write \"src/**/*.{js,jsx}\"",
+    "build:icons": "tsc -b src/iconify-bundle && node src/iconify-bundle/bundle-icons-react.js"
+  },
+
+
+  //\starter-kit\src\pages\_app.js
+  Change TiTle 
+
+ //starter-kit\src\configs\themeConfig.js
+Rename App Name
+
+//E:\MyProject\react_crash_course\starter-kit\src\layouts\UserLayout.js
+change Logo on menu
+
+
+const AppBrand = () => {
+  return (
+    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+      <img src='...' alt='logo' width='30' height='30' />
+      <Typography variant='h6' sx={{ ml: 2 }}>
+        Test
+      </Typography>
+    </Box>
+  )
+
+  branding: () => <AppBrand />,

@@ -9,6 +9,10 @@ import Icon from 'src/@core/components/icon'
 import ModeToggler from 'src/@core/layouts/components/shared-components/ModeToggler'
 import UserDropdown from 'src/@core/layouts/components/shared-components/UserDropdown'
 
+import Typography from '@mui/material/Typography'
+
+//import { Typography } from '@mui/material/Typography';
+
 const AppBarContent = props => {
   // ** Props
   const { hidden, settings, saveSettings, toggleNavVisibility } = props
@@ -21,8 +25,10 @@ const AppBarContent = props => {
             <Icon icon='bx:menu' />
           </IconButton>
         ) : null}
-
         <ModeToggler settings={settings} saveSettings={saveSettings} />
+      </Box>
+      <Box className='actions-center' sx={{ mr: 2, display: 'flex', alignItems: 'center' }}>
+        <Typography variant='h6'>Line Official Account Thai Red Cross Society</Typography>
       </Box>
       <Box className='actions-right' sx={{ display: 'flex', alignItems: 'center' }}>
         <UserDropdown settings={settings} />

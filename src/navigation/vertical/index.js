@@ -19,7 +19,8 @@ const navigation = () => {
     },
     {
       path: '/register',
-      icon: 'bx:envelope'
+      icon: 'bx:envelope',
+      title: 'Register',
     }
   ]
 }

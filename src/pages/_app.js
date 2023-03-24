@@ -101,7 +101,7 @@ const App = props => {
       <CacheProvider value={emotionCache}>
         <Head>
           <title>{`${themeConfig.templateName} - Set For Red Cross`}</title>
-          <meta name='keywords' content='Material Design, MUI, Admin Template, React Admin Template' />
+          <meta name='keywords' content='Thai Red Cross Society' />
           <meta name='viewport' content='initial-scale=1, width=device-width' />
         </Head>
 

@@ -15,7 +15,11 @@ const navigation = () => [
     subject: 'acl-page',
     title: 'Access Control',
     icon: 'bx:shield',
-  }
+  },{
+    title: 'Calendar',
+    path: '/apps/calendar',
+    icon: 'mdi:calendar-blank-outline'
+  },
 ]
 
 export default navigation

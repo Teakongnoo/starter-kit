@@ -1,5 +1,7 @@
-import mock from './mock' 
+import mock from './mock'
 
- import './auth/jwt' 
+import './auth/jwt'
 
- mock.onAny().passThrough()
+import './apps/calendar'
+
+mock.onAny().passThrough()

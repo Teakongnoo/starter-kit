@@ -19,8 +19,13 @@ const navigation = () => {
     },
     {
       path: '/register',
-      icon: 'bx:envelope',
       title: 'Register',
+      icon: 'bx:form'
+    },
+    {
+      title: 'Calendar',
+      path: '/apps/calendar',
+      icon: 'mdi:calendar-blank-outline'
     }
   ]
 }

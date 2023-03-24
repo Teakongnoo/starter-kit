@@ -57,6 +57,10 @@ import 'src/iconify-bundle/icons-bundle-react'
 // ** Global css styles
 import '../../styles/globals.css'
 
+// ** Store Imports
+import { store } from 'src/store'
+import { Provider } from 'react-redux'
+
 const clientSideEmotionCache = createEmotionCache()
 
 // ** Pace Loader
@@ -95,9 +99,10 @@ const App = props => {
   const authGuard = Component.authGuard ?? true
   const guestGuard = Component.guestGuard ?? false
   const aclAbilities = Component.acl ?? defaultACLObj
+  
 
   return (
-
+<Provider store={store}>
       <CacheProvider value={emotionCache}>
         <Head>
           <title>{`${themeConfig.templateName} - Set For Red Cross`}</title>
@@ -128,6 +133,7 @@ const App = props => {
           </SettingsProvider>
         </AuthProvider>
       </CacheProvider>
+      </Provider>
 
   )
 }

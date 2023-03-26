@@ -26,6 +26,11 @@ const navigation = () => {
       title: 'Calendar',
       path: '/apps/calendar',
       icon: 'mdi:calendar-blank-outline'
+    },
+    {
+      title: 'Login',
+      path: '/login',
+      icon: 'mdi:calendar-blank-outline'
     }
   ]
 }

@@ -31,6 +31,11 @@ const navigation = () => {
       title: 'Login',
       path: '/login',
       icon: 'mdi:calendar-blank-outline'
+    },
+    {
+      title: 'FORM',
+      path: '/forms',
+      icon: 'mdi:calendar-blank-outline'
     }
   ]
 }

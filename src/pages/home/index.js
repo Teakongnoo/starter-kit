@@ -1,42 +1,49 @@
 // ** MUI Imports
-import Card from '@mui/material/Card'
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
-import CardHeader from '@mui/material/CardHeader'
-import CardContent from '@mui/material/CardContent'
 
-const Home = () => {
+// ** Styled Component
+import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
+
+// ** Demo Components Imports
+import FormLayoutsTabs from 'src/views/forms/form-layouts/FormLayoutsTabs'
+import FormLayoutsBasic from 'src/views/forms/form-layouts/FormLayoutsBasic'
+import FormLayoutsIcons from 'src/views/forms/form-layouts/FormLayoutsIcons'
+import FormLayoutsSeparator from 'src/views/forms/form-layouts/FormLayoutsSeparator'
+import FormLayoutsAlignment from 'src/views/forms/form-layouts/FormLayoutsAlignment'
+import FormLayoutsCollapsible from 'src/views/forms/form-layouts/FormLayoutsCollapsible'
+
+const FormLayouts = () => {
   return (
-    <Grid container spacing={6}>
-      {/* <Grid item xs={12}>
-        <Card>
-          <CardHeader title='Kick start your project 🚀'></CardHeader>
-          <CardContent>
-            <Typography sx={{ mb: 2 }}>All the best for your new project.</Typography>
-            <Typography>
-              Please make sure to read our Template Documentation to understand where to go from here and how to use our
-              template.
-            </Typography>
-          </CardContent>
-        </Card>
-      </Grid>
-      <Grid item xs={12}>
-        <Card>
-          <CardHeader title='ACL and JWT 🔒'></CardHeader>
-          <CardContent>
-            <Typography sx={{ mb: 2 }}>
-              Access Control (ACL) and Authentication (JWT) are the two main security features of our template and are
-              implemented in the starter-kit as well.
-            </Typography>
-            <Typography>Please read our Authentication and ACL Documentations to get more out of them.</Typography>
-          </CardContent>
-        </Card>
-      </Grid> */}
-      <Grid item xs={12} sx={{ pt: theme => `${theme.spacing(8)} !important` }}>
+    <DatePickerWrapper>
+      <Grid container spacing={6}>
+        <Grid item xs={12} md={6}>
+          <FormLayoutsBasic />
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <FormLayoutsIcons />
+        </Grid>
+        <Grid item xs={12}>
+          <FormLayoutsSeparator />
+        </Grid>
+        <Grid item xs={12} sx={{ pt: theme => `${theme.spacing(8)} !important` }}>
           <Typography variant='h6'>Form with Tabs</Typography>
         </Grid>
-    </Grid>
+        <Grid item xs={12} sx={{ pt: theme => `${theme.spacing(4)} !important` }}>
+          <FormLayoutsTabs />
+        </Grid>
+        <Grid item xs={12} sx={{ pt: theme => `${theme.spacing(8)} !important` }}>
+          <Typography variant='h6'>Collapsible Sections</Typography>
+        </Grid>
+        <Grid item xs={12} sx={{ pt: theme => `${theme.spacing(4)} !important` }}>
+          <FormLayoutsCollapsible />
+        </Grid>
+        <Grid item xs={12}>
+          <FormLayoutsAlignment />
+        </Grid>
+      </Grid>
+    </DatePickerWrapper>
   )
 }
 
-export default Home
+export default FormLayouts

@@ -50,7 +50,7 @@ const UserLayout = ({ children, contentHeightFixed }) => {
 const AppBrand = () => {
   return (
     <Box sx={{ display: 'flex', alignItems: 'center' }}>
-      <img src='...' alt='logo' width='30' height='30' />
+      <img src='\images\thairedcross.p' alt='logo' width='30' height='30' />
       <Typography variant='h6' sx={{ ml: 2 }}>
         Test
       </Typography>

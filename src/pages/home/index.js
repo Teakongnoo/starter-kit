@@ -8,7 +8,7 @@ import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
 // ** Demo Components Imports
 import FormLayoutsTabs from 'src/views/forms/form-layouts/FormLayoutsTabs'
 import FormLayoutsBasic from 'src/views/forms/form-layouts/FormLayoutsBasic'
-import FormLayoutsIcons from 'src/views/forms/form-layouts/FormLayoutsIcons'
+import ViewHome from 'src/views/main/pages/Home'
 import FormLayoutsSeparator from 'src/views/forms/form-layouts/FormLayoutsSeparator'
 import FormLayoutsAlignment from 'src/views/forms/form-layouts/FormLayoutsAlignment'
 import FormLayoutsCollapsible from 'src/views/forms/form-layouts/FormLayoutsCollapsible'
@@ -18,7 +18,7 @@ const FormLayouts = () => {
     <DatePickerWrapper>
       <Grid container spacing={6}>
         <Grid item xs={12} sx={{ pt: theme => `${theme.spacing(8)} !important` }}>
-          <FormLayoutsIcons />
+          <ViewHome />
         </Grid>
       </Grid>
     </DatePickerWrapper>

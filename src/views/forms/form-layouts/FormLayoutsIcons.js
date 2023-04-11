@@ -4,46 +4,50 @@ import Grid from '@mui/material/Grid'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
 import CardHeader from '@mui/material/CardHeader'
+import CardMedia from '@mui/material/CardMedia'
 import CardContent from '@mui/material/CardContent'
 import InputAdornment from '@mui/material/InputAdornment'
+import Typography from '@mui/material/Typography'
+import Avatar from '@mui/material/Avatar'
 
 // ** Icon Imports
 import Icon from 'src/@core/components/icon'
 
 // ** Import React
 import { useState, useEffect } from 'react'
+import Paper from 'src/@core/theme/overrides/paper'
 
 const FormLayoutsIcons = () => {
   // Hook useState
-  const [botId, setBotId] = useState('');
-  const [ownerId, setOwnerId] = useState('');
-  const [accessToken, setAccessToken] = useState('');
-  const [secretKey, setSecretKey] = useState('');
-  const [ formValid,setFormValid] = useState(false);
+  const [datas, setDatas] = useState([])
+  const [botId, setBotId] = useState('')
+  const [ownerId, setOwnerId] = useState('')
+  const [accessToken, setAccessToken] = useState('')
+  const [secretKey, setSecretKey] = useState('')
+  const [formValid, setFormValid] = useState(false)
 
-  const inputBotId = (event) => {
-    setBotId(event.target.value);
+  const inputBotId = event => {
+    setBotId(event.target.value)
   }
 
-  const inputOwnerId = (event) => {
-    setOwnerId(event.target.value);
+  const inputOwnerId = event => {
+    setOwnerId(event.target.value)
   }
 
-  const inputAccessToken = (event) => {
-    setAccessToken(event.target.value);
+  const inputAccessToken = event => {
+    setAccessToken(event.target.value)
   }
 
-  const inputSecretKey = (event) => {
-    setSecretKey(event.target.value);
+  const inputSecretKey = event => {
+    setSecretKey(event.target.value)
   }
-
 
   const onChange = () => {
-    console.log('1234');
+    console.log('1234')
   }
 
-  const onClick = (event) => {
-    event.preventDefault();
+  const onClick = event => {
+    event.preventDefault()
 
     const formData = {
       botId: botId,
@@ -58,9 +62,29 @@ const FormLayoutsIcons = () => {
     setSecretKey('')
   }
 
+  // useEffect(() => {
+  //   const formCheck  = botId.trim().length > 0 ?setFormValid(true) : setFormValid(false);
+  // }, [botId])
+
   useEffect(() => {
-    const formCheck  = botId.trim().length > 0 ?setFormValid(true) : setFormValid(false);
-  }, [botId])
+    // Update the document title using the browser API
+    const formCheck = botId.trim().length > 0 ? setFormValid(true) : setFormValid(false)
+
+    fetch('https://www.melivecode.com/api/users')
+      .then(res => res.json())
+      .then(
+        result => {
+          setDatas(result)
+        },
+
+        // Note: it's important to handle errors here
+        // instead of import { Paper } from '@mui/material/Paper';
+        // exceptions from actual bugs in components.
+        error => {
+          alert('Not Found User')
+        }
+      )
+  })
 
   return (
     <Card>
@@ -80,9 +104,7 @@ const FormLayoutsIcons = () => {
                     </InputAdornment>
                   )
                 }}
-
                 onChange={inputBotId}
-
                 value={botId}
               />
             </Grid>
@@ -98,9 +120,7 @@ const FormLayoutsIcons = () => {
                     </InputAdornment>
                   )
                 }}
-
-                onChange={inputOwnerId }
-
+                onChange={inputOwnerId}
                 value={ownerId}
               />
             </Grid>
@@ -117,8 +137,7 @@ const FormLayoutsIcons = () => {
                   )
                 }}
                 value={accessToken}
-
-              onChange = {inputAccessToken}
+                onChange={inputAccessToken}
               />
             </Grid>
             <Grid item xs={12}>
@@ -127,7 +146,6 @@ const FormLayoutsIcons = () => {
                 type='text'
                 label='Secret Key'
                 placeholder='Secret Key'
-
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position='start'>
@@ -147,6 +165,25 @@ const FormLayoutsIcons = () => {
             </Grid>
           </Grid>
         </form>
+
+        {datas.map(data => (
+          <Card sx={{ maxWidth: 345 }} variant='outlined' key={data.id}>
+            <CardHeader
+              avatar={<Avatar alt={data.fname} src={data.avatar} />}
+              title={data.fname}
+              subheader='September 14, 2016'
+            />
+            <CardContent>
+              <Typography variant='body2' color='text.secondary'>
+                This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1
+                cup of frozen peas along with the mussels, if you like.
+              </Typography>
+            </CardContent>
+            <CardContent>
+              <Typography> {data.fname}</Typography>
+            </CardContent>
+          </Card>
+        ))}
       </CardContent>
     </Card>
   )

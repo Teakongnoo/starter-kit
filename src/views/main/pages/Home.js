@@ -21,51 +21,6 @@ import Paper from 'src/@core/theme/overrides/paper'
 const FormLayoutsIcons = () => {
   // Hook useState
   const [datas, setDatas] = useState([])
-  const [botId, setBotId] = useState('')
-  const [ownerId, setOwnerId] = useState('')
-  const [accessToken, setAccessToken] = useState('')
-  const [secretKey, setSecretKey] = useState('')
-  const [formValid, setFormValid] = useState(false)
-
-  const inputBotId = event => {
-    setBotId(event.target.value)
-  }
-
-  const inputOwnerId = event => {
-    setOwnerId(event.target.value)
-  }
-
-  const inputAccessToken = event => {
-    setAccessToken(event.target.value)
-  }
-
-  const inputSecretKey = event => {
-    setSecretKey(event.target.value)
-  }
-
-  const onChange = () => {
-    console.log('1234')
-  }
-
-  const onClick = event => {
-    event.preventDefault()
-
-    const formData = {
-      botId: botId,
-      ownerId: ownerId,
-      accessToken: accessToken,
-      secretKey: secretKey
-    }
-    console.log(formData)
-    setBotId('')
-    setOwnerId('')
-    setAccessToken('')
-    setSecretKey('')
-  }
-
-  // useEffect(() => {
-  //   const formCheck  = botId.trim().length > 0 ?setFormValid(true) : setFormValid(false);
-  // }, [botId])
 
   useEffect(() => {
     // Update the document title using the browser API
@@ -90,7 +45,7 @@ const FormLayoutsIcons = () => {
             />
             <CardContent>
               <Typography variant='body2' color='text.secondary'>
-              {data.fname}
+                {data.fname}
               </Typography>
             </CardContent>
             <CardContent>
